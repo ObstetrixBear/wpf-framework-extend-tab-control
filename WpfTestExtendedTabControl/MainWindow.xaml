@@ -45,8 +45,10 @@
 
             <!-- The tabs go here -->
             <TabItem Header="Tab 1">
+                <Label>One!</Label>
             </TabItem>
             <TabItem Header="Tab 2">
+                <Label>Two!</Label>
             </TabItem>
         </local:SettingsAwareTabControl>
     </Grid>
