@@ -1,6 +1,8 @@
 # Extended WPF TabControl for C# .NET Framework
 A demonstration of how to extend a TabControl with an extra WPF element.
 
+![image](https://github.com/ObstetrixBear/wpf-framework-extend-tab-control/assets/129376193/750e6373-9ffd-4c01-8ca8-f29bbc473e6b)
+
 ## What this is
 At work, I had a tab-control. In it, I needed to display a message between the Tab Header field and the Content. This is my solution.
 
