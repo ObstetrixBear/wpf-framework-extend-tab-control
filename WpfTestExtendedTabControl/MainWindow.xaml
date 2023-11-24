@@ -7,25 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <!-- Define your Style and ControlTemplate here -->
-
-        <Style TargetType="{x:Type local:MyCustomTabControl}">
+        <Style TargetType="{x:Type local:SettingsAwareTabControl}">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type local:MyCustomTabControl}">
+                    <ControlTemplate TargetType="{x:Type local:SettingsAwareTabControl}">
                         <Grid>
+                            <!-- Here, we specify how tall the various fields should be. -->
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <!-- Tab headers -->
                                 <RowDefinition Height="Auto"/>
-                                <!-- Your Extra Content -->
+                                <!-- Settings -->
                                 <RowDefinition Height="*"/>
                                 <!-- Tab content -->
                             </Grid.RowDefinitions>
                             <TabPanel Grid.Row="0" IsItemsHost="True" />
                             <Border Grid.Row="1" Background="Gray" Height="2" />
                             <!-- This is the visible bar -->
-                            <ContentControl Grid.Row="1" Content="{Binding YourExtraControl, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ContentControl Grid.Row="1" Content="{Binding SettingsControl, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <!-- This is the content -->
                             <ContentPresenter Grid.Row="2" Content="{Binding SelectedContent, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Grid>
                     </ControlTemplate>
@@ -35,22 +35,19 @@
 
     </Window.Resources>
     <Grid>
-        <local:MyCustomTabControl>
-            <local:MyCustomTabControl.YourExtraControl>
-                <!-- This is where you define the content of the bar -->
+        <local:SettingsAwareTabControl>
+            <local:SettingsAwareTabControl.SettingsControl>
+                <!-- This is where you define the content of the settings bar -->
                 <StackPanel Background="LightGray" Height="50">
                     <TextBlock Text="Extra Content Here" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <!-- Add more controls as needed -->
                 </StackPanel>
-            </local:MyCustomTabControl.YourExtraControl>
+            </local:SettingsAwareTabControl.SettingsControl>
 
-            <!-- Define your tabs here -->
+            <!-- The tabs go here -->
             <TabItem Header="Tab 1">
-                <!-- Tab content -->
             </TabItem>
             <TabItem Header="Tab 2">
-                <!-- Tab content -->
             </TabItem>
-        </local:MyCustomTabControl>
+        </local:SettingsAwareTabControl>
     </Grid>
 </Window>
