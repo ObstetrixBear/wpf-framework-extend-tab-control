@@ -8,7 +8,7 @@ At work, I had a tab-control. In it, I needed to display a message between the T
 
 ## Implementation
 
-Surprisingly enough, implementing the `SettingsAwareTabControl` requires very little code. All you need to do to is derive from `TabControl` and then do two things: register the dependency property for the settings bar using a `DependencyProperty`, and then wrap that `SettingsControlProperty` in getters and setters. 
+Surprisingly enough, implementing the `SettingsAwareTabControl` required very little code. All I needed to do to was derive from `TabControl` and then do two things: register the dependency property for the settings bar using a `DependencyProperty`, and then wrap that `SettingsControlProperty` in getters and setters. 
 
 ## Usage 
 
